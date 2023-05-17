@@ -1,0 +1,104 @@
+@import '../../../../styles.scss';
+
+.header {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  padding: 1rem;
+  z-index: 999;
+  width: 100%;
+  height: $header-height;
+  background-color: $second-color;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo a{
+      color: $first-color;
+      font-weight: bold;
+      font-size: 2rem;
+      text-decoration: none;
+    }
+  }
+}
+
+.menu {
+  position: fixed;
+  left: 0;
+  bottom: $header-height;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: $second-color;
+  opacity: 0;
+  transition: opacity .5s ease;
+  pointer-events: none;
+
+  a {
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: $first-color;
+
+    &:hover {
+      color: $white-color;
+      background-color: $first-color;
+    }
+  }
+}
+
+.menu.is-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu-btn {
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  background-color: $second-color;
+  svg {
+    fill: $first-color;
+  }
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 1024px) {
+  .header {
+    position: sticky;
+    top: 0;
+    padding: .5rem;
+    height: calc($header-height - 0.5rem);
+  }
+
+  .menu-btn {
+    display: none;
+  }
+
+  .menu {
+    position: static;
+    width: auto;
+    flex-direction: row;
+    opacity: 1;
+    pointer-events: auto;
+
+    a {
+      padding: 0 1rem;
+    }
+
+    a:last-child {
+      padding-right: 0;
+    }
+
+    a:hover {
+      background-color: transparent;
+    }
+  }
+}
