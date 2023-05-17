@@ -1,0 +1,26 @@
+@import '../../../styles.scss';
+
+.hero-image {
+  background-image: url('/assets/img/hero-image-home.jpg') ;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  &-opacity {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $black-alpha-color;
+    text-align: center;
+  }
+  &-title {
+    font-size: 7.5vw;
+    color:$white-color;
+    margin-bottom: 1rem;
+  }
+  a:hover {
+    opacity: 100%;
+  }
+}
